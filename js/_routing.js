@@ -8,7 +8,8 @@ bgmApp.config(function($routeProvider, $locationProvider) {
 			controller: 'HomeCtrl'
 		})
 		.when('/pl/final', {
-			templateUrl: 'templates/pl/final.html'
+			templateUrl: 'templates/pl/final.html',
+			controller: 'FinalCtrl'
 		})
 		.otherwise({
 			redirectTo: '/pl'
@@ -18,11 +19,11 @@ bgmApp.config(function($routeProvider, $locationProvider) {
 
 });    
 
-bgmApp.run( function($rootScope, $location) {
+bgmApp.run(function($rootScope, $location) {
    $rootScope.$watch(function() { 
       return $location.path(); 
     },
-    function(url){  
+    function(url){
     	$rootScope.$on( "$routeChangeSuccess", function(event, next, current) {
     		app.init(url);	
 		});

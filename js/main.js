@@ -10,7 +10,10 @@ function App() {
 	this.init = function(url) {
 		_self.markMenuItem(url);
 		_self.detectDevice();
+		_self.matchWindowHeight();
+	}
 
+	this.matchWindowHeight = function() {
 		if(desktop) {
 			var h = $(document).height();
 			$('aside, #container').css('min-height', h); 
@@ -31,10 +34,28 @@ function App() {
         phone = (w < 768);
 	}
 
+	this.matchHeight = function(element) {
+		var highest = 0;
+		$(element).each(function(){
+			if($(this).outerHeight() > highest) {
+				highest = $(this).outerHeight();
+			}
+		});
+		$(element).css('height', highest);
+	}
+
+	this.setInVerticalCenter = function(element) {
+		$(element).each(function() {
+			var parentHeight = $(this).parent().height();
+			var thisHeight = $(this).height();
+			var marginTop = (parentHeight - thisHeight) / 2;
+			$(this).css('margin-top', marginTop);
+		});
+	}
 }
 
 $(document).ready(function(){
 	$(window).resize(function(){
-		app.init();
+		app.matchWindowHeight();
 	});
 });
