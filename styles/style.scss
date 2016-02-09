@@ -1,0 +1,295 @@
+@import "../../bower_components/bootstrap/dist/css/bootstrap.min.css";
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web:400,200,200italic,300,300italic,600,400italic,600italic&subset=latin,latin-ext);
+
+$red: #ef0000;
+
+@mixin transform($transforms) {
+	   -moz-transform: $transforms;
+	     -o-transform: $transforms;
+	    -ms-transform: $transforms;
+	-webkit-transform: $transforms;
+          transform: $transforms;
+}
+// rotate
+@mixin rotate ($deg) {
+  @include transform(rotate(#{$deg}deg));
+}
+
+
+body{ 
+	font-family: 'Titillium Web', sans-serif;
+	
+	&:before{
+		content: " ";
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 50%;
+		height:100%; 
+		background: #000000;
+		display: block;
+	}
+}
+
+main{
+	width:100%;
+	max-width: 1366px;
+	margin:auto;
+}
+
+
+aside{ 
+	font-size:13px;
+	color:#ffffff;
+	width:230px; 
+	height:100%;
+	background:#000000;
+	vertical-align: top;
+	display: inline-block;
+	position: fixed;
+	top:0; 
+}
+
+.languages{ 
+	list-style: none;
+	padding: 0;
+	text-align: center;
+	margin: 12px auto;
+	font-weight: 600;
+
+	li{
+		display:inline;
+		margin:0 8px;
+		position: relative;
+
+		a{
+			color:#ffffff;
+		}
+
+		&:after{
+			content:" ";
+			display:block;
+			position: absolute;
+			right: -10px;
+			top:4px;
+			width:1px;
+			height:14px;
+			background: #ffffff;
+		}
+
+		&:nth-last-child(1) {
+			&:after{
+				display:none;
+			}
+		}
+
+		&.current{
+			&:before{
+				content:" ";
+				display: block;
+				background: #ffffff;
+				width: 5px;
+				height: 5px;
+				border-radius: 50%;
+				position: absolute;
+				top:20px;
+				left:50%;
+				margin-left: -2.5px;
+			}
+		}
+	}
+}
+
+.logo{
+	margin:25px auto;
+	display: block;
+}
+
+.main-nav{
+	ul{
+		padding: 0 0 0 66px;
+		font-size:16px;
+		list-style-type: none;
+
+		li{
+			a{
+				color:#a8a8a8;
+				font-weight: 300; 
+				position: relative; 
+				display: inline-block;
+
+				&:hover{ 
+					color:#ffffff;
+					text-decoration: none;
+				} 
+
+				&.highlight{
+					color:$red;
+					font-weight: 600;
+				}
+
+				&.current{ 
+					color:#ffffff;
+					font-weight: 600;
+
+					&:before{
+						content:" ";
+						display: block;
+						background: #ffffff;
+						width: 5px;
+						height: 5px;
+						border-radius: 50%;
+						position: absolute;
+						top:10px;
+						left:-12px;
+					}
+				}
+
+				b{
+					font-weight: 600;
+				}
+			}
+		}
+	}
+} 
+
+.main-menu{
+	position: relative;
+
+	.menu-description{
+		color:$red;
+		font-size:14px;
+		font-weight: 600;
+		@include rotate(-90);
+		left:-17px;
+		top:83px;
+		position: absolute;
+
+		&:before{
+			content:" ";
+			width:20px;
+			height:1px;
+			display: block;
+			background: $red;
+			position: absolute;
+			left: -25px;
+			top:10px;
+		}
+
+		&:after{
+			content:" ";
+			width:20px;
+			height:1px;
+			display: block;
+			background: $red;
+			position: absolute;
+			right: -25px;
+			top:11px;
+		}
+	}
+}
+
+#container{
+	background: #ffffff;
+	width: 980px;
+	vertical-align: top;
+	display: inline-block;
+	position: relative;
+	margin-left: 230px
+}
+
+.tile{
+	display: inline-block;
+	vertical-align: top;
+	padding:40px 17px 17px;
+	width:180px;
+	height:765px;
+	float:left;
+	opacity: 0;
+	color:#000000;
+
+	h1, h2{
+		font-size:40px;
+		font-weight: 200;
+		line-height: 37px; 
+	}
+
+	p{
+		font-size:19px;
+		font-weight: 600;
+		line-height: 16px;
+	}
+
+	.box{
+		padding: 17px 22px 13px;
+		border:2px solid #000000;
+		font-weight: 600;
+
+		p{
+			line-height: 23px;
+		}
+
+		i{
+			font-weight: 200;
+		}
+	}
+
+	.btn{
+		background:$red;
+		font-weight: 600;
+		color:#ffffff;
+		border-radius: 0;
+		padding: inherit 15px;
+		margin:5px 0;
+		padding: 4px 21px;
+	}
+
+	.full-date{
+		margin-bottom:30px;
+	}
+
+	span{
+		font-size:15px;
+		float: right;
+		margin:-32px 0 0;
+	}
+}
+
+.tile-1{
+	width:197px;
+	background:url('../img/tile-1.jpg');
+	
+	span{
+		color:#9b9b9b;
+	}
+}
+
+.tile-2{
+	width:196px;
+	background:url('../img/tile-2.jpg');
+
+	span{
+		color:#9cb19f;
+	}
+}
+
+.tile-3{
+	width:195px;
+	background:url('../img/tile-3.jpg');
+
+	span{
+		color:#808080;
+	}
+}
+
+.tile-4{
+	width:196px;
+	background:url('../img/tile-4.jpg');
+
+	span{
+		color:#9d8686;
+	}
+}
+.flipInY {
+	opacity: 1;
+}

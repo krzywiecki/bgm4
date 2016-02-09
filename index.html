@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html ng-app="bgmApp">
+    <head>
+        <meta charset="utf-8">
+        
+        <!--[if IE]>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <![endif]-->
+        
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    
+        <title>BGM4</title>
+        <meta name="description" content="">
+        <base href="/">
+        <link rel="stylesheet" href="dist/css/animate.min.css">
+        <link rel="stylesheet" href="dist/css/style.css">
+    </head>
+ 	<body>
+ 		<main>
+			<aside>
+				<ul class="languages">
+					<li class="current"><a href="/pl">PL</a></li>
+					<li><a href="/en">ENG</a></li>
+					<li><a href="/de">DE</a></li>
+				</ul>
+
+				<a href="/">
+					<img class="logo" src="dist/img/logo.png">
+				</a>
+
+				<nav class="main-nav">
+					<ul>
+						<li><a href="/pl"><b>#BGM4</b>milestone</a></li> 
+					</ul>
+					<ul>
+						<li><a href="#">Browary na BGM4</a></li> 
+					</ul>
+
+					<ul class="main-menu">
+						<li class="menu-description">Finał - 2.04 - sobota</li>
+						<li><a href="/pl/final">Finał</a></li> 
+						<li><a href="#">Plan obiektu</a></li> 
+						<li><a href="#">Jak dojechać</a></li> 
+						<li><a href="#">Program</a></li> 
+						<li><a href="#">Beer Is Art</a></li> 
+						<li><a href="#">Gastro</a></li> 
+						<li><a href="#">Scena muzyczna</a></li> 
+						<li><a class="highlight" href="#">Kup bilet</a></li> 
+					</ul>
+
+					<ul>
+						<li><a href="#">Kontakt</a></li> 
+						<li><a href="#">o BGM</a></li> 
+					</ul>
+				</nav>
+			</aside>
+
+			<div id="container" ng-view>
+				
+			</div> 
+		</main>
+		<script src="dist/js/libs.min.js"></script>
+		<script src="dist/js/app.min.js"></script>
+ 	</body>
+ </html>
