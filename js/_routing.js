@@ -3,13 +3,29 @@ var bgmApp = angular.module('bgmApp', ['ngRoute']);
 bgmApp.config(function($routeProvider, $locationProvider) {
 	
 	$routeProvider
-		.when('/pl', {
-			templateUrl: 'templates/pl/home.html',
-			controller: 'HomeCtrl'
+		.when('/:lang', {
+			templateUrl: function(urlAttr) {
+				return 'templates/' + urlAttr.lang + '/home.html';
+			},
+			controller: 'HomeTemplateCtrl'
 		})
-		.when('/pl/final', {
-			templateUrl: 'templates/pl/final.html',
-			controller: 'FinalCtrl'
+		.when('/:lang/:file', {
+			templateUrl: function(urlAttr) {
+				return 'templates/' + urlAttr.lang + '/' + urlAttr.file + '.html';
+			},
+			controller: 'TileTemplateCtrl'
+		})
+		.when('/:lang/:path/:file', {
+			templateUrl: function(urlAttr) {
+				return 'templates/' + urlAttr.lang + '/' + urlAttr.path + '/' + urlAttr.file + '.html';
+			},
+			controller: 'SingleTemplateCtrl'
+		})
+		.when('/:lang/final', {
+			templateUrl: function(urlAttr) {
+				return 'templates/' + urlAttr.lang + '/final.html';
+			},
+			controller: 'FinalTemplateCtrl'
 		})
 		.otherwise({
 			redirectTo: '/pl'
@@ -25,7 +41,8 @@ bgmApp.run(function($rootScope, $location) {
     },
     function(url){
     	$rootScope.$on( "$routeChangeSuccess", function(event, next, current) {
-    		app.init(url);	
+    		$rootScope.bodyClass = url.split('/')[2];
+    		app.init(url);
 		});
     });
 });

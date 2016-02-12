@@ -11,11 +11,16 @@ function App() {
 		_self.markMenuItem(url);
 		_self.detectDevice();
 		_self.matchWindowHeight();
+		if(!desktop) {
+			_self.responsiveMenuHandler();
+    		_self.hideMenu();
+    	}
 	}
 
 	this.matchWindowHeight = function() {
 		if(desktop) {
-			var h = $(document).height();
+			var h = $(window).height();
+			console.log('document height: ' + h);
 			$('aside, #container').css('min-height', h); 
 		}
 	}
@@ -28,8 +33,7 @@ function App() {
 	this.detectDevice = function() {
 		var w = $(window).width();
 
-        desktop = (w > 1199);
-        netbook = (w > 991 && w < 1200);
+        desktop = (w > 980);
         tablet = (w > 767 && w < 992);
         phone = (w < 768);
 	}
@@ -51,6 +55,31 @@ function App() {
 			var marginTop = (parentHeight - thisHeight) / 2;
 			$(this).css('margin-top', marginTop);
 		});
+	}
+
+	this.responsiveMenuHandler = function() {
+		$('.btn-menu').click(function(){
+			switch($('aside').hasClass('active')) {
+
+			case true:
+				_self.hideMenu();
+				break;
+
+			case false:
+				_self.showMenu();
+				break;
+			}
+		});
+	}
+
+	this.showMenu = function() {
+		$('aside').stop().animate({ left: 0 }, 300);	
+		$('aside').addClass('active');
+	}
+
+	this.hideMenu = function() {
+		$('aside').stop().animate({ left: -243 }, 300);
+		$('aside').removeClass('active');
 	}
 }
 

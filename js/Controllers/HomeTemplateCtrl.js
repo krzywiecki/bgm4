@@ -1,4 +1,4 @@
-bgmApp.controller('HomeCtrl', function() {
+bgmApp.controller('HomeTemplateCtrl', function() {
 	var i = 1;
 	$('.tile').each(function(){
 		var _self = $(this);

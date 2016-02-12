@@ -29,7 +29,7 @@ gulp.task('sass', function () {
 });
 
 gulp.task('libs.js', function() {
-  var g = gulp.src(['./bower_components/jquery/dist/jquery.js', './bower_components/bootstrap/dist/js/bootstrap.min.js', './bower_components/angular/angular.js', './bower_components/angular-route/angular-route.js'])
+  var g = gulp.src(['./bower_components/jquery/dist/jquery.js', './bower_components/bootstrap/dist/js/bootstrap.min.js', './bower_components/angular/angular.js', './bower_components/angular-route/angular-route.js', './bower_components/photoswipe/dist/photoswipe.js', './bower_components/photoswipe/dist/photoswipe-ui-default.js'])
     .pipe(concat('libs.js'))
     .pipe(uglify())
     .pipe(rename({suffix: '.min'}))

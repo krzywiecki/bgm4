@@ -7,7 +7,7 @@
             <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <![endif]-->
         
-        <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
     
         <title>BGM4</title>
         <meta name="description" content="">
@@ -15,53 +15,103 @@
         <link rel="stylesheet" href="dist/css/animate.min.css">
         <link rel="stylesheet" href="dist/css/style.css">
     </head>
- 	<body>
+ 	<body ng-controller="MainCtrl" class="{{ bodyClass }}">
  		<main>
+
+			<button class="btn-menu"><img src="dist/img/menu-icon.png"></button>
+
 			<aside>
+
 				<ul class="languages">
-					<li class="current"><a href="/pl">PL</a></li>
+					<li><a href="/pl">PL</a></li>
 					<li><a href="/en">ENG</a></li>
 					<li><a href="/de">DE</a></li>
 				</ul>
 
-				<a href="/">
+				<a href="/{{ lang }}">
 					<img class="logo" src="dist/img/logo.png">
 				</a>
 
 				<nav class="main-nav">
 					<ul>
-						<li><a href="/pl"><b>#BGM4</b>milestone</a></li> 
+						<li><a href="/{{ lang }}"><b>#BGM4</b>milestone</a></li> 
 					</ul>
 					<ul>
-						<li><a href="#">Browary na BGM4</a></li> 
-						<li><a href="#">Miejsca</a></li> 
-						<li><a href="#">Program</a></li> 
-						<li><a href="#">Baza noclegowa</a></li> 
+						<li><a href="/{{ lang }}/breweries">Browary na BGM4</a></li> 
+						<li><a href="/{{ lang }}/#">Miejsca</a></li> 
+						<li><a href="/{{ lang }}/#">Program</a></li> 
+						<li><a href="/{{ lang }}/#">Baza noclegowa</a></li> 
 					</ul>
 
 					<ul class="main-menu">
 						<li class="menu-description">Finał - 2.04 - sobota</li>
-						<li><a href="/pl/final">Finał</a></li> 
-						<li><a href="#">Plan obiektu</a></li> 
-						<li><a href="#">Jak dojechać</a></li> 
-						<li><a href="#">Program</a></li> 
-						<li><a href="#">Beer Is Art</a></li> 
-						<li><a href="#">Gastro</a></li> 
-						<li><a href="#">Scena muzyczna</a></li> 
-						<li><a class="highlight" href="#">Kup bilet</a></li> 
+						<li><a href="/{{ lang }}/final">Finał</a></li> 
+						<li><a href="/{{ lang }}/#">Plan obiektu</a></li> 
+						<li><a href="/{{ lang }}/#">Jak dojechać</a></li> 
+						<li><a href="/{{ lang }}/#">Program</a></li> 
+						<li><a href="/{{ lang }}/beer-is-art">Beer Is Art</a></li> 
+						<li><a href="/{{ lang }}/gastro">Gastro</a></li> 
+						<li><a href="/{{ lang }}/#">Scena muzyczna</a></li> 
+						<li><a class="highlight" href="{{ lang }}/#">Kup bilet</a></li> 
 					</ul>
 
 					<ul>
-						<li><a href="#">Kontakt</a></li> 
-						<li><a href="#">o BGM</a></li> 
+						<li><a href="/{{ lang }}/#">Kontakt</a></li> 
+						<li><a href="/{{ lang }}/#">o BGM</a></li> 
 					</ul>
 				</nav>
 			</aside>
 
-			<div id="container" class="final" ng-view>
+			<div id="container" ng-view>
 				
 			</div> 
 		</main>
+		<!-- Root element of PhotoSwipe. Must have class pswp. -->
+		<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+		    <!-- Background of PhotoSwipe. 
+		         It's a separate element, as animating opacity is faster than rgba(). -->
+		    <div class="pswp__bg"></div>
+		    <!-- Slides wrapper with overflow:hidden. -->
+		    <div class="pswp__scroll-wrap">
+		        <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+		        <!-- don't modify these 3 pswp__item elements, data is added later on. -->
+		        <div class="pswp__container">
+		            <div class="pswp__item"></div>
+		            <div class="pswp__item"></div>
+		            <div class="pswp__item"></div>
+		        </div>
+		        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+		        <div class="pswp__ui pswp__ui--hidden">
+		            <div class="pswp__top-bar">
+		                <!--  Controls are self-explanatory. Order can be changed. -->
+		                <div class="pswp__counter"></div>
+		                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+		                <button class="pswp__button pswp__button--share" title="Share"></button>
+		                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+		                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+		                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+		                <!-- element will get class pswp__preloader--active when preloader is running -->
+		                <div class="pswp__preloader">
+		                    <div class="pswp__preloader__icn">
+		                      <div class="pswp__preloader__cut">
+		                        <div class="pswp__preloader__donut"></div>
+		                      </div>
+		                    </div>
+		                </div>
+		            </div>
+		            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+		                <div class="pswp__share-tooltip"></div> 
+		            </div>
+		            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+		            </button>
+		            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+		            </button>
+		            <div class="pswp__caption">
+		                <div class="pswp__caption__center"></div>
+		            </div>
+		        </div>
+		    </div>
+		</div>
 		<script src="dist/js/libs.min.js"></script>
 		<script src="dist/js/app.min.js"></script>
  	</body>
