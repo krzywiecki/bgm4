@@ -6,26 +6,17 @@ bgmApp.config(function($routeProvider, $locationProvider) {
 		.when('/:lang', {
 			templateUrl: function(urlAttr) {
 				return 'templates/' + urlAttr.lang + '/home.html';
-			},
-			controller: 'HomeTemplateCtrl'
+			}
 		})
 		.when('/:lang/:file', {
 			templateUrl: function(urlAttr) {
 				return 'templates/' + urlAttr.lang + '/' + urlAttr.file + '.html';
-			},
-			controller: 'TileTemplateCtrl'
+			}
 		})
 		.when('/:lang/:path/:file', {
 			templateUrl: function(urlAttr) {
 				return 'templates/' + urlAttr.lang + '/' + urlAttr.path + '/' + urlAttr.file + '.html';
-			},
-			controller: 'SingleTemplateCtrl'
-		})
-		.when('/:lang/final', {
-			templateUrl: function(urlAttr) {
-				return 'templates/' + urlAttr.lang + '/final.html';
-			},
-			controller: 'FinalTemplateCtrl'
+			}
 		})
 		.otherwise({
 			redirectTo: '/pl'

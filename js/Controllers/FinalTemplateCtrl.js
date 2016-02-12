@@ -1,4 +1,4 @@
-bgmApp.controller('FinalCtrl', function($scope) {
+bgmApp.controller('FinalTemplateCtrl', function($scope) {
 	$scope.$watch();
 	
 	app.matchHeight('.logotype');
