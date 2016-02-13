@@ -1,0 +1,2 @@
+bgmApp.controller('PlacesTemplateCtrl', function() {
+});
