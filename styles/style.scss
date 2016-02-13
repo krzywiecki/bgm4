@@ -318,6 +318,25 @@ aside{
 	opacity: 1;
 }
 
+.event-info{
+	font-size:19px;
+}
+
+.text-bg{
+	font-size:19px;
+	background:#000000;
+	color:#ffffff;
+	padding: 5px 0;
+	margin: 0 0 10px 0;
+	text-align: center;
+
+	&.small{
+		font-size:15px;
+		padding: 3px 0;
+	}
+
+}
+
 .final{
 	color:#000000;
 
@@ -355,21 +374,9 @@ aside{
 
 }
 
-.event-info{
-	font-size:19px;
-}
-
 .wrap{
 	display: block;
 	text-align: center;
-
-	.header{
-		font-size:19px;
-		background:#000000;
-		color:#ffffff;
-		padding: 5px 0;
-		margin: 0 0 10px 0;
-	}
 
 	.col-sm-3{
 		padding: 0 15px 0 0;
@@ -406,6 +413,28 @@ aside{
 .single{
 	padding:27px 8px 30px 42px;
 	opacity: 0;
+
+	.event-info{
+		font-size:19px;
+	}
+
+	.text-bg{
+		font-size:19px;
+		font-weight: 300;
+		background:#000000;
+		color:#ffffff;
+		padding: 5px 0;
+		margin: 0 0 10px 0;
+
+		b{
+			font-weight: 600;
+		}
+
+		&.small{
+			font-size:15px;
+			padding: 3px 0;
+		}
+	}
 
 	&.single-large-font-size{
 
@@ -596,6 +625,159 @@ aside{
 		&:hover{	
 			figcaption{
 				bottom: 1px;
+			}
+		}
+	}
+}
+
+.buy-ticket{
+
+	.single{
+		padding: 20px 0 0 25px;
+
+		&-2{
+			padding-bottom: 50px;
+		}
+
+		.plus{
+			text-align: center;
+			font-weight: 700;
+			font-size:31.33px; 
+			padding: 0;
+			line-height: 40px;
+			margin: -17px 0 0;
+		}
+	}
+
+	.package{
+
+		&.package-premium{
+			.price{
+				margin-top: 15px;
+			}
+
+			.item{
+				left: -5px;
+			}
+
+			.row:nth-child(1){
+				border-right: 0px solid transparent;
+				margin-bottom: 45px;
+			}
+		}
+
+		.row:nth-child(1){
+			position: relative;
+			border-right: 1px solid #c8c8c8;
+			margin-bottom: 62px;
+		}
+
+		.col-lg-5{
+			position: initial;
+		}
+
+		h2{
+			color:$red;
+			font-size:32px;
+			font-weight: 600;
+			line-height: 28px;
+			margin: 0;
+
+			&.premium{
+				color:#e08900;
+			}
+
+			small{
+				color:#000000;
+				font-size:19px;
+				font-weight: 600;
+			}
+		}
+
+		span{
+			font-size:15px;
+			font-weight: 300;
+			margin-bottom: 5px;
+			display:inline-block;
+		}
+	}
+
+	.event-info{
+		margin:0 0 15px;
+	}
+
+	.glass-1{
+		position: relative;
+		top: 60px;
+	}
+
+	.price{
+		padding: 0;
+		margin-top: 100px;
+		text-align: center;
+		font-size:35px;
+		font-style: italic;
+		font-weight: 300;
+		z-index: 999;
+
+		small{
+			font-size:15px;
+		}
+
+		.btn{
+			margin-top:-8px;
+			width:100%;
+			background: $red;
+			font-size:20px;
+			font-weight: 600;
+			padding: 6px 0;
+			color:#ffffff;
+			font-style: normal;
+
+			&.premium{
+				background: #e08900;
+			}
+		}
+	}
+
+	.item{
+		margin: 5px 0;
+		position: relative;
+		left: 15px;
+
+		.col-lg-6{
+			padding-left: 5px;
+			padding-right: 5px;
+		}
+
+		.col-lg-6:nth-child(1){
+			text-align: right;
+		}
+
+		.col-lg-6:nth-child(2){
+			text-align: left;
+		}
+
+		p{
+			padding: 0 15px;
+			font-size: 17px;
+			font-weight: 300;
+			line-height: 21px;
+
+			&.title{
+				padding: 45px 15px 0;
+				margin: 0 0 12px 0;
+
+				b{
+					color: #e08900;
+					font-weight: 600;
+					font-size: 22.07px;
+					margin-bottom: -30px;
+
+					&.red{
+						color:$red;
+					}
+				}
 			}
 		}
 	}
