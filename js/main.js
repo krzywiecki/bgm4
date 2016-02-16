@@ -14,6 +14,9 @@ function App() {
 		if(!desktop) {
 			app.hideMenu();
 		}
+		else{
+			app.showMenu();
+		}
 	}
 
 	this.matchWindowHeight = function() {
