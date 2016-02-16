@@ -27,13 +27,9 @@ bgmApp.config(function($routeProvider, $locationProvider) {
 });    
 
 bgmApp.run(function($rootScope, $location) {
-   $rootScope.$watch(function() { 
-      return $location.path(); 
-    },
-    function(url){
-    	$rootScope.$on( "$routeChangeSuccess", function(event, next, current) {
-    		$rootScope.bodyClass = url.split('/')[2];
-    		app.init(url);
-		});
-    });
+    $rootScope.$on( "$routeChangeSuccess", function(event, next, current) {
+    	var url = $location.url();
+    	$rootScope.bodyClass = url.split('/')[2];
+    	app.init(url);
+	});
 });

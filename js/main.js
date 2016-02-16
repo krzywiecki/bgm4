@@ -12,15 +12,13 @@ function App() {
 		_self.detectDevice();
 		_self.matchWindowHeight();
 		if(!desktop) {
-			_self.responsiveMenuHandler();
-    		_self.hideMenu();
-    	}
+			app.hideMenu();
+		}
 	}
 
 	this.matchWindowHeight = function() {
 		if(desktop) {
 			var h = $(window).height();
-			console.log('document height: ' + h);
 			$('aside, #container').css('min-height', h); 
 		}
 	}
@@ -59,15 +57,11 @@ function App() {
 
 	this.responsiveMenuHandler = function() {
 		$('.btn-menu').click(function(){
-			switch($('aside').hasClass('active')) {
-
-			case true:
+			if($('aside').hasClass('active')) {
 				_self.hideMenu();
-				break;
-
-			case false:
+			}
+			else {
 				_self.showMenu();
-				break;
 			}
 		});
 	}
@@ -84,7 +78,10 @@ function App() {
 }
 
 $(document).ready(function(){
+	
+	app.responsiveMenuHandler();
+
 	$(window).resize(function(){
-		app.matchWindowHeight();
+		app.init();
 	});
 });
