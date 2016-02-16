@@ -15,14 +15,33 @@ function App() {
 			app.hideMenu();
 		}
 		else{
-			app.showMenu();
+			app.showMenu(); 
 		}
+	}
+
+	this.initScroll = function() {
+		$('aside').enscroll({
+			showOnHover: false,
+		    verticalTrackClass: 'scroll-track',
+		    verticalHandleClass: 'scroll-handle'
+		});
+
+		$('.enscroll-track').parent().css('z-index', '99999');
+
+		$('aside').hover(
+			function(){
+				$('.scroll-track').animate({'opacity': 1}, 300);
+			},
+			function(){
+				$('.scroll-track').animate({'opacity': 0}, 300);
+			}
+		);
 	}
 
 	this.matchWindowHeight = function() {
 		if(desktop) {
 			var h = $(window).height();
-			$('aside, #container').css('min-height', h); 
+			$('aside, #container, .tile').css('min-height', h); 
 		}
 	}
 
@@ -81,10 +100,14 @@ function App() {
 }
 
 $(document).ready(function(){
-	
+	app.initScroll();
 	app.responsiveMenuHandler();
 
 	$(window).resize(function(){
 		app.init();
+	});
+
+	$(window).load(function(){
+		app.matchWindowHeight();
 	});
 });

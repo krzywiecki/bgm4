@@ -30,12 +30,6 @@ body{
 	font-family: 'Titillium Web', sans-serif;
 }
 
-main{
-	width:100%;
-	max-width: 1366px;
-	margin:auto;
-}
-
 .btn-menu{
 	display: none;
 }
@@ -54,6 +48,42 @@ main{
 	font-weight: 600 !important;
 }
 
+.scroll-track {
+	opacity:0;
+    width: 10px;
+    background: rgba(255, 255, 255, 0);
+    margin-right: 2px;
+    border-radius: 10px;
+    -webkit-transition: background 250ms linear;
+    transition: background 250ms linear;
+}
+
+.scroll-track:hover,
+.scroll-track.dragging {
+    background: #d9d9d9; 
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.scroll-handle {
+    width: 7px;
+    right: 0;
+    background: #999;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 7px;
+    -webkit-transition: width 250ms;
+    transition: width 250ms;
+}
+
+.scroll-track:hover .scroll-handle,
+.scroll-track.dragging .scroll-handle {
+    width: 10px;
+}
+
+main{
+	width:100%;
+	margin:auto;
+}
+
 aside{ 
 	font-size:13px;
 	color:#ffffff;
@@ -65,16 +95,11 @@ aside{
 	position: fixed;
 	top:0; 
 	z-index: 99;
+	overflow-y:scroll; 
 
-	&:before{
-		content: " ";
-		position: absolute;
-		top: 0;
-		width: 1000%;
-		height:100%; 
-		background: #000000;
+	.fb-icon{
 		display: block;
-		right:0;
+		margin: 30px auto;
 	}
 }
 
@@ -289,8 +314,8 @@ aside{
 }
 
 .tile-1{
-	width:197px;
-	background:url('../img/tile-1.jpg');
+	width:196px;
+	background:#373737 url('../img/tile-1.jpg') no-repeat;
 	
 	span{
 		color:#9b9b9b;
@@ -299,7 +324,7 @@ aside{
 
 .tile-2{
 	width:196px;
-	background:url('../img/tile-2.jpg');
+	background:#9ea09d url('../img/tile-2.jpg') no-repeat;
 
 	span{
 		color:#9cb19f;
@@ -308,7 +333,7 @@ aside{
 
 .tile-3{
 	width:195px;
-	background:url('../img/tile-3.jpg');
+	background:#888888 url('../img/tile-3.jpg') no-repeat;
 
 	span{
 		color:#808080;
@@ -317,7 +342,7 @@ aside{
 
 .tile-4{
 	width:196px;
-	background:url('../img/tile-4.jpg');
+	background:#352c2d url('../img/tile-4.jpg') no-repeat;
 
 	span{
 		color:#9d8686;
