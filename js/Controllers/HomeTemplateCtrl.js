@@ -7,4 +7,6 @@ bgmApp.controller('HomeTemplateCtrl', function() {
 		}, 200*i);
 		i++;
 	});
+
+	app.matchWindowHeight();
 });

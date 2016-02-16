@@ -29,7 +29,7 @@ bgmApp.config(function($routeProvider, $locationProvider) {
 bgmApp.run(function($rootScope, $location) {
     $rootScope.$on( "$routeChangeSuccess", function(event, next, current) {
     	var url = $location.url();
-    	$rootScope.bodyClass = url.split('/')[2];
+    	$rootScope.bodyClass = url.split('/')[2] ? url.split('/')[2] : 'home';
     	app.init(url);
 	});
 });

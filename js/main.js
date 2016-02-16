@@ -108,6 +108,7 @@ $(document).ready(function(){
 	});
 
 	$(window).load(function(){
+		app.detectDevice();
 		app.matchWindowHeight();
 	});
 });

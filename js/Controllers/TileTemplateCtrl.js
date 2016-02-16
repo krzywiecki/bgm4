@@ -4,10 +4,10 @@ bgmApp.controller('TileTemplateCtrl', function() {
 	$('.tile-section').each(function(){
 		var _self = $(this);
 		if(i%2 == 0) {
-			var animatation = 'fadeInUp';
+			var animatation = 'fadeInLeft';
 		}
 		else {
-			var animatation = 'fadeInDown';
+			var animatation = 'fadeInLeft';
 		}
 
 		setTimeout(function(){
