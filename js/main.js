@@ -380,7 +380,8 @@ function Map() {
 			mapTypeId: google.maps.MapTypeId.ROADMAP,
 			styles: styles
 		};
-		_self.map = new google.maps.Map(jQuery('#places-map')[0], mapOptions);
+
+		_self.map = new google.maps.Map(jQuery('.map')[0], mapOptions);
 		_self.geocoder = new google.maps.Geocoder();
 		_self.latlngbounds = new google.maps.LatLngBounds();
 
