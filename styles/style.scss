@@ -781,8 +781,18 @@ aside{
 
 .buy-ticket{
 
+	p{
+		margin-bottom: 15px;
+	}
+
+	figure{
+		img{
+			max-width:100%;
+		}
+	}
+
 	.single{
-		padding: 20px 0 0 25px;
+		padding: 20px 100px 0 15px;
 
 		&-2{
 			padding-bottom: 50px;
@@ -798,7 +808,37 @@ aside{
 		}
 	}
 
+	.packages{
+		&:before{
+			content:'';
+			width:100%;
+			height:1px;
+			background:#c8c8c8;
+			position:absolute;
+			bottom:42px;
+			left:30px;
+			display: block;
+			z-index: 99;
+		}
+	}
+
 	.package{
+
+		&:nth-child(1) {
+			position: relative;
+
+			&:before{
+				content:" ";
+				display: block;
+				width:1px;
+				height: 365px;
+				position: absolute;
+				right:15px;
+				top:0;
+				background: #c8c8c8;
+				z-index: 99;
+			}
+		}
 
 		&.package-premium{
 			.price{
@@ -817,8 +857,6 @@ aside{
 
 		.row:nth-child(1){
 			position: relative;
-			border-right: 1px solid #c8c8c8;
-			margin-bottom: 62px;
 		}
 
 		.col-lg-5{
@@ -851,8 +889,33 @@ aside{
 		}
 	}
 
+	.item-img{
+		padding: 0;
+	}
+
+	.col-md-6{
+		.row{
+			.item-text:nth-child(1){
+				text-align: right;
+			}
+		}
+	}
+
 	.event-info{
+		font-weight: 600;
 		margin:0 0 15px;
+	}
+
+	.glasses{
+		figure{
+			padding-right: 15px;
+		}
+	}
+
+	.glass-1, .glass-2{
+		max-width: 100%;
+		display: block;
+		margin: auto;
 	}
 
 	.glass-1{
@@ -891,8 +954,6 @@ aside{
 
 	.item{
 		margin: 5px 0;
-		position: relative;
-		left: 15px;
 
 		.col-lg-6{
 			padding-left: 5px;
@@ -927,6 +988,52 @@ aside{
 						color:$red;
 					}
 				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.buy-ticket{
+		
+		.packages{
+			&:before{
+				display: none;
+			}
+		}
+
+		.package{
+			&:nth-child(1):before{
+				display:none;
+			}
+		}
+
+		.item{
+			.item-text{
+				text-align: right;
+			}
+			.item-img{
+				float:right;
+			}
+		}
+
+		.milestone-tshirts{
+			.item{
+				.item-text{
+					float:right;
+					text-align: left;
+				}
+
+				.item-img{
+					float:left;
+					text-align: right;
+				}
+			}
+		}
+
+		figure{
+			img{
+				max-width: 220px;
 			}
 		}
 	}
@@ -1035,6 +1142,26 @@ aside{
 			margin:0 auto 10px;
 		}
 	}
+
+	.buy-ticket{
+
+		.single{
+			padding: 20px 15px 0 15px;
+		}
+
+		.price{
+			margin-top: 0;
+		}
+
+		.glass-1, .glass-2{
+			top:0;
+		}
+
+		.item-text, .item-img{
+			width:50%;
+			display: inline-block;
+		}
+	}
 }
 
 @media screen and (max-width: 480px) {
@@ -1069,9 +1196,6 @@ aside{
 	}
 
 	.buy-ticket{
-		.col-lg-12{
-			padding: 0;
-		}
 
 		.price{
 			margin-top:initial;
@@ -1080,9 +1204,8 @@ aside{
 
 		.glass-1, .glass-2{
 			display: block;
-			margin: -50px auto -40px;
+			margin:0px auto -40px;
 			position: relative;
-			left:-8px;
 		}
 
 		.glass-2{
@@ -1093,19 +1216,42 @@ aside{
 			border-right: 0;
 		}
 
+		.single{
+			p{
+				padding: 0;
+			}
+		}
+
 		.item{
 			left:0;
 
-			.col-lg-6:nth-child(1){
+			.item-text{
+				float: right;
 				text-align: left;
+				margin-bottom:20px;
 			}
 
-			.item-text{
-				margin-bottom:20px;
+			.item-img{
+				float:left;
+				text-align: right;
+
+				img{
+					max-width: 100%;
+				}
+			}
+
+			p, p.title{
+				padding: 0px;
 			}
 
 			figure{
 				text-align: center;
+			}
+		}
+
+		.glasses{
+			figure{
+				padding-left: 15px;
 			}
 		}
 	}
