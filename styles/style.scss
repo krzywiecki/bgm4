@@ -34,9 +34,24 @@ body{
 	}
 }
 
-.home{
+.home, .places{
 	#container{
 		margin-left: 220px;
+	}
+}
+
+.places{
+	#container{
+		width: 100%;
+		max-width: calc(100% - 220px);
+		height: 100%;
+	}
+	#places-map{
+		width:100%;
+		height:100%; 
+		display: block;
+		z-index: 99;
+		position: absolute;
 	}
 }
 
@@ -316,6 +331,10 @@ aside{
 		margin-bottom:30px;
 	}
 
+	.btn{
+		display: block; 
+	}
+
 	span{
 		font-size:15px;
 		float: right;
@@ -419,6 +438,7 @@ aside{
 		display: block;
 		margin: auto;
 		padding: 5px 14px;
+		width:140px;
 	}
 
 }
