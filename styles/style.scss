@@ -34,6 +34,52 @@ body{
 	}
 }
 
+.marker{
+	position: absolute;
+	width: 64px;
+	height: 58px;
+	display: block;
+	background: url('../img/mark.png');
+	cursor: pointer;
+
+	.bubble {
+		display: none;
+		position: absolute;
+		left:-41px;
+		bottom:45px;
+		width: 140px;
+		padding: 3px;
+		background: #FFFFFF;
+		-webkit-border-radius: 2px;
+		-moz-border-radius: 2px;
+		border-radius: 2px;
+
+		p{
+			padding:0px 2px;
+			line-height: 17px;
+		}
+
+		a{
+			float: right;
+			padding:0px 2px;
+		}
+
+	}
+
+	.bubble:after {
+		content: '';
+		position: absolute;
+		border-style: solid;
+		border-width: 15px 15px 0;
+		border-color: #FFFFFF transparent;
+		display: block;
+		width: 0;
+		z-index: 1;
+		bottom: -15px;
+		left: 58px;
+	}
+}
+
 .home, .places{
 	#container{
 		margin-left: 220px;
@@ -46,12 +92,13 @@ body{
 		max-width: calc(100% - 220px);
 		height: 100%;
 	}
-	#places-map{
+	.map-canvas{
 		width:100%;
 		height:100%; 
 		display: block;
 		z-index: 99;
 		position: absolute;
+		overflow: hidden;
 	}
 }
 
@@ -681,7 +728,7 @@ aside{
 		padding-top:117px;
 	}
 
-	.map{
+	.map-canvas{
 		width:450px;
 		height:500px;
 	}
@@ -898,14 +945,6 @@ aside{
 		padding: 0;
 	}
 
-	.col-md-6{
-		.row{
-			.item-text:nth-child(1){
-				text-align: right;
-			}
-		}
-	}
-
 	.event-info{
 		font-weight: 600;
 		margin:0 0 15px;
@@ -998,6 +1037,18 @@ aside{
 	}
 }
 
+@media screen and (min-width: 1200px) {
+	.buy-ticket{
+		.col-lg-6{
+			.row{
+				.item-text:nth-child(1){
+					text-align: right;
+				}
+			}
+		}
+	}
+}
+
 @media screen and (max-width: 1200px) {
 	.buy-ticket{
 		
@@ -1082,7 +1133,7 @@ aside{
 			height:165px;
 			padding:20px;
 
-			&:nth-child(1) {
+			&.tile-description {
 				height:auto;
 				padding: 40px 17px 17px;
 			}
@@ -1166,6 +1217,11 @@ aside{
 			width:50%;
 			display: inline-block;
 		}
+	}
+
+	.places #container{
+		margin-left:0;
+		max-width: 100%;
 	}
 }
 
@@ -1256,9 +1312,11 @@ aside{
 
 		.glasses{
 			figure{
+				padding-right: 0px;
 				padding-left: 15px;
 			}
 		}
+
 	}
 
 	.about{
@@ -1275,4 +1333,16 @@ aside{
 			}
 		}
 	}
+
+	.contact{
+		.single-1{
+			width: 100%;
+		}
+
+		.fb-page{
+			width:100%;
+			margin-top: 30px;
+		}
+	}
+
 }

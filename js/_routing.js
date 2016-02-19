@@ -5,17 +5,17 @@ bgmApp.config(function($routeProvider, $locationProvider) {
 	$routeProvider
 		.when('/:lang', {
 			templateUrl: function(urlAttr) {
-				return 'templates/' + urlAttr.lang + '/home.html';
+				return 'templates/pl/home.html';
 			}
 		})
 		.when('/:lang/:file', {
 			templateUrl: function(urlAttr) {
-				return 'templates/' + urlAttr.lang + '/' + urlAttr.file + '.html';
+				return 'templates/pl/' + urlAttr.file + '.html';
 			}
 		})
 		.when('/:lang/:path/:file', {
 			templateUrl: function(urlAttr) {
-				return 'templates/' + urlAttr.lang + '/' + urlAttr.path + '/' + urlAttr.file + '.html';
+				return 'templates/pl/' + urlAttr.path + '/' + urlAttr.file + '.html';
 			}
 		})
 		.otherwise({
