@@ -1,0 +1,26 @@
+{
+  "name": "browar",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "dominik@krzywiecki.com"
+  ],
+  "license": "ISC",
+  "homepage": "http://beergeekmadness.com",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.0",
+    "angular-route": "^1.5.0",
+    "bootstrap": "^3.3.6",
+    "jquery": "^2.2.0",
+    "enscroll": "^0.6.0",
+    "photoswipe": "^4.1.1"
+  }
+}
